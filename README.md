@@ -13,7 +13,7 @@ The timing functions are traditionally controlled by two buttons on the case. Pr
 
 Mini-project development process requirements
 -------
-Construct a timer with an associated interval of 0.1 seconds whose event handler increments a global integer. (Remember that create_timer takes the interval specified in milliseconds.) This integer will keep track of the time in tenths of seconds. Test your timer by printing this global integer to the console. Important: Do not use floating point numbers to keep track of tenths of a second! While it's certainly possible to get it working, the imprecision of floating point can make your life miserable. Use an integer instead, i.e., 12 represents 1.2 seconds.
+Construct a timer with an associated interval of 0.1 seconds whose event handler increments a global integer. Remember that create_timer takes the interval specified in milliseconds. This integer will keep track of the time in tenths of seconds. Test your timer by printing this global integer to the console. Important: Do not use floating point numbers to keep track of tenths of a second! While it's certainly possible to get it working, the imprecision of floating point can make your life miserable. Use an integer instead, i.e., 12 represents 1.2 seconds.
 Write the event handler function for the canvas that draws the current time (simply as an integer, you should not worry about formatting it yet) in the middle of the canvas. Remember that you will need to convert the current time into a string using str before drawing it.
 Add "Start" and "Stop" buttons whose event handlers start and stop the timer. Next, add a "Reset" button that stops the timer and reset the current time to zero. The stopwatch should be stopped when the frame opens.
 Next, write a helper function format(time) that returns a string of the form A:BC.D where A, C and D are digits in the range 0-9 and B is in the range 0-5. Note that the string returned by your helper function format should always correctly include leading zeros.
@@ -28,13 +28,14 @@ Finally, to turn your stopwatch into a test of reflexes, add to two numerical co
 Add code to ensure that hitting the "Stop" button when the timer is already stopped does not change your score. We suggest that you add a global Boolean variable that is True when the stopwatch is running and False when the stopwatch is stopped. You can then use this value to determine whether to update the score when the "Stop" button is pressed.
 Modify "Reset" so as to set these counters back to zero when clicked.
 
-
-* Make sure that format()returns (not prints) the formatted time as a string. Also, be sure to call format with the global timer counter in your draw handler to output the formatted time on the canvas. Remember: return a string in the definition of format, call format correctly in the draw handler.
+Tips
+-------
+Make sure that format() returns (not prints) the formatted time as a string. Also, be sure to call format with the global timer counter in your draw handler to output the formatted time on the canvas. Remember: return a string in the definition of format, call format correctly in the draw handler.
 
 Here is the format function required logic and operations for anyone who is struggling with it. 
 I tried my best to explain everything so I apologize if some parts seem redundant or too simple for you.
 
-*The problem*:
+**The problem**:
 Given a number of tenths of seconds format a string output in the format A:BC.D where: 
 A = the amount of minutes in that number 
 B = the amount of tens of seconds 
@@ -45,7 +46,7 @@ If a number doesn't have a value a value of 0 should be printed out as a place h
 Explanation: 9 seconds should be printed out as 09 seconds where 0 is represented by B and 9 is represented by C 
 and if the amount of time is less than 1 min a 0 should be displayed in the minutes place represented by A
 
-*The solution*:
+**The solution**:
 A simple formula using integer division and/or modulo operations can be used for each number (A to D) to determine its value. 
 Recall that integer division drops any remainders in the quotient and modulo gives back the remainder of the division. 
 in python the integer division operator is // and the modulo operator is % 
@@ -77,7 +78,7 @@ Useful tip: Integer division will yield 0 where normal division will yield a dec
 
 After all the values are determined what's left is to return them from the function as a string with the format of A:BC.D . so all you need is to return the concatenation of the string equivalent of those values and the pretty colon and point.
 
-*Important*
+**Important**
 As you build more and more complicated code, you should focus on building your code incrementally. By that, I mean: write a little bit of code, test/debug it, write some more code, test/debug it, etc. Writing 20-30 lines of code and THEN trying to debug it with lots of potential errors is a very bad idea. If you keep your program always in a close-to-working state, debugging it is MUCH easier. Again, I suggest following the mini-process development process.
 
 Subtle bug that may arise if your code is poorly structured
