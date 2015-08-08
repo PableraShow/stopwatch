@@ -74,7 +74,7 @@ We can simply accomplish this by using a modulo operation instead of the integer
 D (the amount of the remaining tenths of seconds) 
 This is the simplest of all. The given amount of tenths of seconds can be split into two parts; the number of whole seconds and the number of tenths of seconds that are less than one second. using the same logic in B and C you can easily come up with the formula.
 
-Useful tip: Integer division will yield 0 where normal division will yield a decimal point number less than 1
+**Useful tip**: Integer division will yield 0 where normal division will yield a decimal point number less than 1
 
 After all the values are determined what's left is to return them from the function as a string with the format of A:BC.D . so all you need is to return the concatenation of the string equivalent of those values and the pretty colon and point.
 
