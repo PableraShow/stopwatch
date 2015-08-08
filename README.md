@@ -2,7 +2,7 @@
 
 *Stars, Forks and Pull Requests are welcome :)*
 
-![jpg](images4readme/logo-stopwatch.jpg)
+![png](images4readme/logo-stopwatch.png)
 
 The game
 -------
